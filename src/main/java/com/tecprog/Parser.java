@@ -14,16 +14,16 @@ public class Parser {
 		return this.file;
 	}
 
-	public void setFile(String fileName) {
-		File tmp = new File(fileName);
-
-		if (checkIfFileExists(tmp) == true) {
-			this.file = tmp;
-		}
+	public void setFile(String fileName) throws ArquivoNaoEncontradoException {
+		File tmp = new File(System.getProperty("user.dir") + "/" + fileName);
+		checkIfFileExists(tmp);
+		this.file = tmp;
 	}
 	
-	private Boolean checkIfFileExists(File f) {
-		return f.exists();
+	private void checkIfFileExists(File tmp) throws ArquivoNaoEncontradoException {
+		if(!tmp.exists()) {
+			throw new ArquivoNaoEncontradoException(tmp.getName());
+		}
 	}
 
 	public void setDelimiter(String delimiter) {
