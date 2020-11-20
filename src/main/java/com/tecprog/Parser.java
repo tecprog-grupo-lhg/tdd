@@ -15,13 +15,15 @@ public class Parser {
 	}
 
 	public void setFile(String fileName) {
-		if (checkIfFileExists() == true) {
-			this.file = new File(fileName);
+		File tmp = new File(fileName);
+
+		if (checkIfFileExists(tmp) == true) {
+			this.file = tmp;
 		}
 	}
 	
-	private Boolean checkIfFileExists() {
-		return true;
+	private Boolean checkIfFileExists(File f) {
+		return f.exists();
 	}
 
 	public void setDelimiter(String delimiter) {

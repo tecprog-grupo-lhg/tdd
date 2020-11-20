@@ -12,10 +12,18 @@ import com.tecprog.Parser;
 public class ParserTest 
 {
     private Parser p;
+
     @Test
-    public void setFile() {
+    public void setFile1() {
       p = new Parser();
-      p.setFile("example.txt");
+      p.setFile("totalTime.out");
       assertNotNull(p.getFile());
+    }
+
+    @Test
+    public void setFile2() {
+      p = new Parser();
+      p.setFile("thisfiledoesnotexistsforsure.txt");
+      assertNull(p.getFile());
     }
 }
