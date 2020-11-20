@@ -7,14 +7,12 @@ import org.junit.jupiter.api.Test;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class ParserTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void setFile() {
+      // not implemented yet
+      fail("not yet implemented");
     }
+
 }
