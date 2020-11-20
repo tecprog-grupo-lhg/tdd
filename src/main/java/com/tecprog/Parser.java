@@ -1,3 +1,5 @@
+package com.tecprog;
+
 import java.io.File;
 import java.util.Scanner;
 import java.nio.file.Path;
@@ -8,10 +10,20 @@ public class Parser {
 	private Path output;
 	private String format;
 	
+	public File getFile() {
+		return this.file;
+	}
+
 	public void setFile(String fileName) {
-    // not implemented yet
+		if (checkIfFileExists() == true) {
+			this.file = new File(fileName);
+		}
 	}
 	
+	private Boolean checkIfFileExists() {
+		return true;
+	}
+
 	public void setDelimiter(String delimiter) {
     // not implemented yet
 	}
@@ -39,10 +51,6 @@ public class Parser {
 	private void saveWithRowFormat() {
     // not implemented yet
   }
-	
-	private void checkIfFileExists(File f) {
-    // not implemented yet
-	}
 	
 	private char transformDelimiterToChar(String delimiter) {
     // not implemented yet
